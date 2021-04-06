@@ -1,43 +1,43 @@
 [
     {
-        "question": "5 + 6 kaç eder ?",
-        "answers":["11"],
+        "question": "What does HTML stand for?",
+        "answers":["Hyper Text Markup Language"],
         "point": 10,
         "hintEnable": false
     },
     {
-        "question": "5 - 6 kaç eder ?",
-        "answers":["-1"],
+        "question": "HTML tag for the largest heading?",
+        "answers":["<h1>"],
         "point": 10,
         "hintEnable": false
     },
     {
-        "question": "92 x 11 kaç eder ?",
-        "answers":["1012"],
+        "question": "HTML tag for inserting a line break?",
+        "answers":["<br>"],
         "point": 40,
         "hintEnable": false
     },
     {
-        "question": "10 ila 20 arasında kaç asal sayı vardır  ?",
-        "answers":["4"],
+        "question": "How can you make a numbered list?",
+        "answers":["<ol>"],
         "point": 30,
         "hintEnable": false
     },
     {
-        "question": "SOPA grubunun solo gitaristinin adı nedir(sadece adı) ?",
-        "answers":["okan"],
+        "question": "What does CSS stand for?",
+        "answers":["Cascading Style Sheets"],
         "point": 30,
         "hintEnable": false
     },
     {
-        "question": "Do Bemol ?",
-        "answers": ["si"],
+        "question": "Which property is used to change the background color?",
+        "answers": ["background-color"],
         "point": 50,
         "hintEnable": false
     },
     {
-        "question": "R&B nin açılımı nedir  ?",
-        "answers": ["Rhythm and blues","Rhythmandblues"],
+        "question": "Which property is used to change the left margin of an element?",
+        "answers": ["margin-left"],
         "point": 30,
         "hintEnable": false
     }
