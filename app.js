@@ -1,6 +1,6 @@
 const Telegraf = require('telegraf');
 var fs = require("fs");
-const bot = new Telegraf("API_KEY")
+const bot = new Telegraf("1682034994:AAEePtja-TYpt-P1cMkmA0Y4KWBTl-i4XGY")
 
 const Timeouts = {
     HELLO: 1000,
@@ -56,8 +56,8 @@ function StartGame() {
     isGameOn = true;
     setTimeout(
         () => {
-            SendMessage(`Herkese selam Yarış birazdan başlamak üzere. Hazır olun ve flüt yapmayın(${Timeouts.NEXT_QUESTION/1000}saniye)`);
-            SendMessage("Lütfen Yarışmaya katılmak için /join  yazın");
+            SendMessage(`Hi all, The race is about to start soon. Get ready and don't make a flute(${Timeouts.NEXT_QUESTION/1000}second)`);
+            SendMessage("Please type / join to enter the Contest");
             NextQuestion();
         }
         , Timeouts.HELLO);
@@ -65,14 +65,14 @@ function StartGame() {
 }
 
 function EndGame() {
-    SendMessage("Oyun bitti Puan durumu -->");
+    SendMessage("Quizzz Over");
     ScoreBoard();
     questionNumber = -1;
     isGameOn = false;
     isQuestionActive = false;
 }
 function QuestionTimeout() {
-    SendMessage(`Kimse soruyu yanıtlayamadı :(:(\n Cevap "${current_question.answers[0]}" olacaktı`);
+    SendMessage(`Nobody could answer the question :(:(\n Cevap "${current_question.answers[0]}" olacaktı`);
     isQuestionActive = false;
     NextQuestion();
 }
@@ -88,7 +88,7 @@ function NextQuestion() {
     SendMessage(`${questionNumber + 1}. Soru Geliyor Hazırlan!!!`);
     setTimeout(() => {
         current_question = questions[questionNumber];
-        SendMessage(`✨Soru ${questionNumber + 1} (${current_question.point} Puan)✨\n >>> *${current_question.question}*`);
+        SendMessage(`✨Question ${questionNumber + 1} (${current_question.point} Point)✨\n >>> *${current_question.question}*`);
         isQuestionActive = true;
         questionTimeout = setTimeout(QuestionTimeout, Timeouts.QUESTION);
     }, Timeouts.NEXT_QUESTION);
@@ -117,7 +117,7 @@ function GameLogic(prediction, ctx) {
             isQuestionActive=false;
             const index = players.findIndex(p => p.id == ctx.message.from.id);
             players[index].point = players[index].point + current_question.point;
-            var message = `👏👏Tebrikler [${players[index].first_name}](tg://user?id=${players[index].id})  ${current_question.point} puan kazandınız!!👏👏`;
+            var message = `👏👏Congratulations [${players[index].first_name}](tg://user?id=${players[index].id})  ${current_question.point} You earned points !!👏👏`;
             SendMessage(message);
             NextQuestion();
         }
